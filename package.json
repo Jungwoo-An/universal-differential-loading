@@ -1,0 +1,8 @@
+{
+  "name": "webpack-differential-loading",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Jungwoo-An/webpack-differential-loading",
+  "author": "Jungwoo An <o1o9814@naver.com>>",
+  "license": "MIT"
+}
