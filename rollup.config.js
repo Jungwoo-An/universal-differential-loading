@@ -11,25 +11,27 @@ const packages = (fs.readdirSync(path.resolve('./packages')) || []).reduce(
       return result
     }
 
-    result.push(fullPath)
+    result.push(`packages/${item}`)
 
     return result
   },
   []
 )
 
+console.log(packages)
+
 export default packages.map(dir => {
-  const FILENAME = `${dir}/dist/${path.basename(dir)}`
+  const FILENAME = path.basename(dir)
   return {
     input: `${dir}/lib/index.ts`,
     output: [
       {
-        file: `${FILENAME}.es.js`,
+        file: `packages/${FILENAME}/dist/${FILENAME}.es.js`,
         format: 'es',
         sourcemap: true
       },
       {
-        file: `${FILENAME}.js`,
+        file: `packages/${FILENAME}/dist/${FILENAME}.js`,
         format: 'cjs',
         sourcemap: true
       }
