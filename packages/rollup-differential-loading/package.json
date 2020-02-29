@@ -1,0 +1,8 @@
+{
+  "name": "rollup-differential-loading",
+  "version": "0.1.0",
+  "main": "./dist/rollup-differential-loading.js",
+  "module": "./dist/rollup-differential-loading.es.js",
+  "author": "Jungwoo An <o1o9814@naver.com>>",
+  "license": "MIT"
+}
