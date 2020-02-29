@@ -18,8 +18,6 @@ const packages = (fs.readdirSync(path.resolve('./packages')) || []).reduce(
   []
 )
 
-console.log(packages)
-
 export default packages.map(dir => {
   const FILENAME = path.basename(dir)
   return {
