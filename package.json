@@ -1,17 +1,17 @@
 {
   "name": "webpack-differential-loading",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "https://github.com/Jungwoo-An/webpack-differential-loading",
-  "author": "Jungwoo An <o1o9814@naver.com>>",
+  "author": "Jungwoo An <o1o9814@naver.com>",
   "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "rollup --config"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.21.0",
     "@typescript-eslint/parser": "^2.21.0",
-    "add": "^2.0.6",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.10.0",
     "eslint-config-standard": "^14.1.0",
