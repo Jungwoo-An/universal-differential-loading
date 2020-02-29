@@ -4,5 +4,8 @@
   "extends": ["standard", "prettier", "prettier/standard"],
   "env": {
     "mocha": true
+  },
+  "rules": {
+    "no-unused-vars": 0
   }
 }
