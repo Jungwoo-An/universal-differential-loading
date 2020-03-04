@@ -1,3 +1,4 @@
-node_modules
 .vscode
+.nvmrc
+node_modules
 dist

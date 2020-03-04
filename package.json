@@ -1,5 +1,5 @@
 {
-  "name": "webpack-differential-loading",
+  "name": "differential-loading",
   "author": "Jungwoo An <o1o9814@naver.com>",
   "license": "MIT",
   "private": true,
@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "rollup --config",
-    "test": "jest --passWithNoTests --no-cache"
+    "test": "rollup --config && jest --passWithNoTests --no-cache"
   },
   "devDependencies": {
     "@types/jest": "^25.1.3",
