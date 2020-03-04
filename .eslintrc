@@ -3,7 +3,7 @@
   "plugins": ["@typescript-eslint"],
   "extends": ["standard", "prettier", "prettier/standard"],
   "env": {
-    "mocha": true
+    "jest": true
   },
   "rules": {
     "no-unused-vars": 0
