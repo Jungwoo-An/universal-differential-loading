@@ -1,7 +1,7 @@
 <h3 align="center">universal-differential-loading</h3>
 <p align="center">The easiest way to configure differential-loading</p>
 
-## Instroduction
+## Introduction
 
 This project was inspired by [angular website](https://angular.io/guide/deployment#differential-loading)
 

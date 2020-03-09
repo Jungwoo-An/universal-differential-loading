@@ -1,7 +1,7 @@
 <h3 align="center">webpack-differential-loading</h3>
 <p align="center">The easiest way to configure differential-loading</p>
 
-## Instroduction
+## Introduction
 
 webpack-differential-loading is webpack plugin for differential loading idea. it make complicated and difficult things to easy.
 
