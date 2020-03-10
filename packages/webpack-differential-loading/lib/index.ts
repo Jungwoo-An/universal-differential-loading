@@ -1,8 +1,7 @@
 import { Configuration } from 'webpack'
 
 import { ConfigurationFunctionType } from './types'
-
-import WebpackDifferentialLoadingPlugin from './WebpackDifferentialLoadingPlugin'
+import { WebpackDifferentialLoadingPlugin } from './WebpackDifferentialLoadingPlugin'
 
 export function setup(
   makeConfiguration: ConfigurationFunctionType

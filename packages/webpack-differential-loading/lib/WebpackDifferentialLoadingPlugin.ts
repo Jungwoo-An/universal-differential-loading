@@ -64,4 +64,4 @@ class WebpackDifferentialLoadingPlugin implements Plugin {
   }
 }
 
-export default WebpackDifferentialLoadingPlugin
+export { WebpackDifferentialLoadingPlugin }
