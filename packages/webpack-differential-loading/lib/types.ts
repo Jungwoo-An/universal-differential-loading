@@ -10,4 +10,12 @@ export interface IHtmlTag {
   voidTag: boolean
 }
 
+export interface IStore {
+  recentlyAssetTags: {
+    head: IHtmlTag[]
+    body: IHtmlTag[]
+  }
+  concurrentPromise: Promise<void> | null
+}
+
 export type ConfigurationFunctionType = (mode: BuildType) => Configuration

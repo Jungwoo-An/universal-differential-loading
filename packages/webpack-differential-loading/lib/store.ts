@@ -1,9 +1,9 @@
-import { IHtmlTag } from './types'
+import { IStore } from './types'
 
-export const recentlyAssetTags: {
-  head: IHtmlTag[]
-  body: IHtmlTag[]
-} = {
-  head: [],
-  body: []
+export const store: IStore = {
+  recentlyAssetTags: {
+    head: [],
+    body: []
+  },
+  concurrentPromise: null
 }
