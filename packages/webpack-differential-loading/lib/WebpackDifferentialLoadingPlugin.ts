@@ -3,7 +3,7 @@ import { Plugin, Compiler } from 'webpack'
 import * as HtmlWebpackPlugin from 'html-webpack-plugin'
 
 import { BuildType, IHtmlTag } from './types'
-import { recentlyAssetTags } from './store'
+import { store } from './store'
 import { updateHtmlTag } from './utils'
 
 class WebpackDifferentialLoadingPlugin implements Plugin {
@@ -38,12 +38,18 @@ class WebpackDifferentialLoadingPlugin implements Plugin {
     plugin: HtmlWebpackPlugin
   }) => {
     const hasPreviousBuildAssetTags =
-      recentlyAssetTags.head.length > 0 || recentlyAssetTags.body.length > 0
+      store.recentlyAssetTags.head.length > 0 ||
+      store.recentlyAssetTags.body.length > 0
 
     if (!hasPreviousBuildAssetTags) {
       // first build
-      recentlyAssetTags.head = htmlPluginData.head.map(this.updateTag)
-      recentlyAssetTags.body = htmlPluginData.body.map(this.updateTag)
+      store.concurrentPromise = new Promise(resolve => {
+        store.recentlyAssetTags.head = htmlPluginData.head.map(this.updateTag)
+        store.recentlyAssetTags.body = htmlPluginData.body.map(this.updateTag)
+
+        resolve()
+      })
+
       return htmlPluginData
     }
 
@@ -57,8 +63,10 @@ class WebpackDifferentialLoadingPlugin implements Plugin {
     const merge =
       this._mode === 'legacy' ? Array.prototype.unshift : Array.prototype.push
 
-    merge.apply(result.head, recentlyAssetTags.head)
-    merge.apply(result.body, recentlyAssetTags.body)
+    await store.concurrentPromise
+
+    merge.apply(result.head, store.recentlyAssetTags.head)
+    merge.apply(result.body, store.recentlyAssetTags.body)
 
     return result
   }
