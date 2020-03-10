@@ -1,6 +1,6 @@
 {
   "name": "webpack-differential-loading",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./dist/webpack-differential-loading.js",
   "module": "./dist/webpack-differential-loading.es.js",
   "author": "Jungwoo An <o1o9814@naver.com>>",
