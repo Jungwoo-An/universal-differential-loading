@@ -49,6 +49,19 @@ module.exports = setup((mode) => {
 })
 ```
 
+**output**
+
+```html
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <script type="module" src="bundle.modern.js"></script>
+    <script type="text/javascript" src="bundle.legacy.js" nomodule></script>
+  </body>
+</html>
+```
+
 ### API
 
 ```ts
